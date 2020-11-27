@@ -7,7 +7,7 @@ print(logo)
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
-user_hand = random.sample(cards, 2)[0:2]
+user_hand = random.sample(cards, 2)[:2]
 computer_hand = random.sample(cards, 3)[2:4]
 print(f"The computer hand is {computer_hand}\nYour current hand is: {user_hand}")
 
