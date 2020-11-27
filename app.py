@@ -1,4 +1,4 @@
-#! user/bin/env python3
+#!/usr/bin/env python3
 
 import random
 from ascii_art import logo
@@ -12,7 +12,7 @@ computer_hand = random.sample(cards, 3)[2:4]
 print(f"The computer hand is {computer_hand}\nYour current hand is: {user_hand}")
 
 def card_holder():
-  ''' Deals cards for computer and user '''
+  # Deals cards for computer and user
 	computer_hand.append(random.sample(cards, 2)[1])
 	# print(f'computer current hand: {computer_hand}')
 	user_input = input('Do you want to hit (y/n): ')
@@ -34,6 +34,10 @@ def card_holder():
 			print(f"\nYou lose! Computer wins with: {computer_output}")
 		elif computer_output == user_output and computer_output > 21 or user_output > 21:
 			print("It's a draw!")
+		elif computer_output > 21 and user_output < 21:
+			print(f"\nYou're the winner with a total of: {user_output}\nThe computer went over: {computer_output}")
+		elif computer_output < 21 and user_output > 21:
+			print(f"\nYou lose! with: {user_output}\nThe computer wins with: {computer_output}")
 		elif user_output > 21:
 			print("It's a bust! You lose")
 
